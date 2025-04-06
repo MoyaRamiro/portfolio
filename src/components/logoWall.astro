@@ -1,23 +1,47 @@
 ---
-const technologies = [
-  "angular",
-  "astro",
-  "auth0",
-  "java",
-  "postgresql",
-  "remix",
-  "spring",
-  "react",
-  "typeScript",
-  "tailwindcss",
-  "nodejs",
-  "HTML5",
-  "CSS3",
-  "javaScript",
-  "git",
-  "mysql",
-  "vercel",
-  "vite",
+import { Image, imageConfig } from "astro:assets";
+import angular from "../../public/svg/angular.svg";
+import astro from "../../public/svg/astro.svg";
+import auth0 from "../../public/svg/auth0.svg";
+import java from "../../public/svg/java.svg";
+import postgresql from "../../public/svg/postgresql.svg";
+import remix from "../../public/svg/remix.svg";
+import spring from "../../public/svg/spring.svg";
+import react from "../../public/svg/react.svg";
+import typeScript from "../../public/svg/typeScript.svg";
+import tailwindcss from "../../public/svg/tailwindcss.svg";
+import nodejs from "../../public/svg/nodejs.svg";
+import HTML5 from "../../public/svg/HTML5.svg";
+import CSS3 from "../../public/svg/CSS3.svg";
+import javaScript from "../../public/svg/javaScript.svg";
+import git from "../../public/svg/git.svg";
+import mysql from "../../public/svg/mysql.svg";
+import vercel from "../../public/svg/vercel.svg";
+import vite from "../../public/svg/vite.svg";
+
+interface Technology {
+  name: string;
+  image: ImageMetadata;
+}
+const technologies: Technology[] = [
+  {name: "angular", image: angular},
+  {name: "astro", image: astro},
+  {name: "auth0", image: auth0},
+  {name: "java", image: java},
+  {name: "postgresql", image: postgresql},
+  {name: "remix", image: remix},
+  {name: "spring", image: spring},
+  {name: "react", image: react},
+  {name: "typescript", image: typeScript},
+  {name: "tailwindcss", image: tailwindcss},
+  {name: "nodejs", image: nodejs},
+  {name: "html5", image: HTML5},
+  {name: "css3", image: CSS3},
+  {name: "javascript", image: javaScript},
+  {name: "git", image: git},
+  {name: "mysql", image: mysql},
+  {name: "vercel", image: vercel},
+  {name: "vite", image: vite},
 ];
 ---
 
@@ -35,16 +59,15 @@ const technologies = [
     {
       [...technologies, ...technologies, ...technologies].map((tech) => (
         <div class="flex items-center gap-2 group transition-all duration-300">
-          <img
-            src={`/svg/${tech}.svg`}
-            alt={tech}
+          <Image
+            src={tech.image}
+            alt={tech.name}
             class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
             width="30"
             height="30"
-            loading="lazy"
           />
           <span class="text-lg font-medium text-[var(--white-icon)]">
-            {tech.charAt(0).toUpperCase() + tech.slice(1)}
+            {tech.name.charAt(0).toUpperCase() + tech.name.slice(1)}
           </span>
         </div>
       ))
