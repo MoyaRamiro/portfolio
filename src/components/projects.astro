@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import hypesounds from "../../public/hypesounds.webp";
 import mrnba from "../../public/mrnba.webp";
+import velada from "../../public/lavelada.webp";
 
 interface Project {
   title: string;
@@ -26,6 +27,13 @@ const projects: Project[] = [
     preview: "https://hype-sounds.vercel.app/",
     status: "On Development",
   },
+  {
+    title: "La Velada V Web Oficial",
+    image: velada as ImageMetadata,
+    link: "https://github.com/MoyaRamiro/la-velada-web-oficial",
+    preview: "https://www.infolavelada.com/",
+    status: "On Development",
+  }
 ];
 ---
 
