@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import angular from "../assets/svg/angular.svg";
 import astro from "../assets/svg/astro.svg";
 import auth0 from "../assets/svg/auth0.svg";
@@ -21,9 +20,10 @@ import vite from "../assets/svg/vite.svg";
 
 interface Technology {
   name: string;
-  image: ImageMetadata;
+  image: ((_props: astroHTML.JSX.SVGAttributes) => any) ;
 }
 const technologies: Technology[] = [
+
   {name: "angular", image: angular},
   {name: "astro", image: astro},
   {name: "auth0", image: auth0},
@@ -41,7 +41,6 @@ const technologies: Technology[] = [
   {name: "git", image: git},
   {name: "mysql", image: mysql},
   {name: "vercel", image: vercel},
-  {name: "vite", image: vite},
 ];
 ---
 
@@ -59,9 +58,7 @@ const technologies: Technology[] = [
     {
       [...technologies, ...technologies, ...technologies].map((tech) => (
         <div class="flex items-center gap-2 group transition-all duration-300">
-          <Image
-            src={tech.image}
-            alt={tech.name}
+          <tech.image
             class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
             width="30"
             height="30"
