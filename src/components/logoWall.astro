@@ -1,74 +1,72 @@
 ---
-import { Image } from "astro:assets";
-import angular from "../../public/svg/angular.svg";
-import astro from "../../public/svg/astro.svg";
-import auth0 from "../../public/svg/auth0.svg";
-import java from "../../public/svg/java.svg";
-import postgresql from "../../public/svg/postgresql.svg";
-import remix from "../../public/svg/remix.svg";
-import spring from "../../public/svg/spring.svg";
-import react from "../../public/svg/react.svg";
-import typeScript from "../../public/svg/typeScript.svg";
-import tailwindcss from "../../public/svg/tailwindcss.svg";
-import nodejs from "../../public/svg/nodejs.svg";
-import HTML5 from "../../public/svg/HTML5.svg";
-import CSS3 from "../../public/svg/CSS3.svg";
-import javaScript from "../../public/svg/javaScript.svg";
-import git from "../../public/svg/git.svg";
-import mysql from "../../public/svg/mysql.svg";
-import vercel from "../../public/svg/vercel.svg";
-import vite from "../../public/svg/vite.svg";
-import supa from "../../public/svg/supabase.svg";
-import nest from "../../public/svg/nestjs.svg";
-import next from "../../public/svg/nextjs.svg";
+import angular from "../assets/svg/angular.svg";
+import astro from "../assets/svg/astro.svg";
+import auth0 from "../assets/svg/auth0.svg";
+import java from "../assets/svg/java.svg";
+import postgresql from "../assets/svg/postgresql.svg";
+import remix from "../assets/svg/remix.svg";
+import spring from "../assets/svg/spring.svg";
+import react from "../assets/svg/react.svg";
+import typeScript from "../assets/svg/typeScript.svg";
+import tailwindcss from "../assets/svg/tailwindcss.svg";
+import nodejs from "../assets/svg/nodejs.svg";
+import HTML5 from "../assets/svg/HTML5.svg";
+import CSS3 from "../assets/svg/CSS3.svg";
+import javaScript from "../assets/svg/javaScript.svg";
+import git from "../assets/svg/git.svg";
+import mysql from "../assets/svg/mysql.svg";
+import vercel from "../assets/svg/vercel.svg";
+import vite from "../assets/svg/vite.svg";
+import supa from "../assets/svg/supabase.svg";
+import nest from "../assets/svg/nestjs.svg";
+import next from "../assets/svg/nextjs.svg";
 
 interface Technology {
   name: string;
-  image: ImageMetadata;
+  image: any;
 }
 const technologies: Technology[] = [
-  {name: "angular", image: angular},
-  {name: "astro", image: astro},
-  {name: "auth0", image: auth0},
-  {name: "java", image: java},
-  {name: "postgresql", image: postgresql},
-  {name: "remix", image: remix},
-  {name: "spring", image: spring},
-  {name: "react", image: react},
-  {name: "typescript", image: typeScript},
-  {name: "tailwindcss", image: tailwindcss},
-  {name: "nodejs", image: nodejs},
-  {name: "html5", image: HTML5},
-  {name: "css3", image: CSS3},
-  {name: "javascript", image: javaScript},
-  {name: "git", image: git},
-  {name: "mysql", image: mysql},
-  {name: "vercel", image: vercel},
-  {name: "vite", image: vite},
-  {name: "supabase", image: supa},
-  {name: "nestjs", image: nest},
-  {name: "next.js", image: next},
+  { name: "Angular", image: angular },
+  { name: "Astro", image: astro },
+  { name: "Auth0", image: auth0 },
+  { name: "Java", image: java },
+  { name: "PostgreSQL", image: postgresql },
+  { name: "Remix", image: remix },
+  { name: "Spring", image: spring },
+  { name: "React", image: react },
+  { name: "TypeScript", image: typeScript },
+  { name: "TailwindCSS", image: tailwindcss },
+  { name: "Node.js", image: nodejs },
+  { name: "HTML", image: HTML5 },
+  { name: "CSS", image: CSS3 },
+  { name: "JavaScript", image: javaScript },
+  { name: "Git", image: git },
+  { name: "Mysql", image: mysql },
+  { name: "Vercel", image: vercel },
+  { name: "Vite", image: vite },
+  { name: "Supabase", image: supa },
+  { name: "NestJS", image: nest },
+  { name: "Next.js", image: next },
 ];
 ---
 
 <div class="relative overflow-x-hidden py-8">
   <div
-    class="pointer-events-none absolute inset-y-0 left-0 w-8 md:w-32 bg-gradient-to-r from-[var(--background)] to-transparent z-20"
+    class="pointer-events-none absolute inset-y-0 left-0 z-20 w-8 bg-gradient-to-r from-[var(--background)] to-transparent md:w-32"
   >
   </div>
   <div
-    class="pointer-events-none absolute inset-y-0 right-0 w-8 md:w-32 bg-gradient-to-l from-[var(--background)] to-transparent z-20"
+    class="pointer-events-none absolute inset-y-0 right-0 z-20 w-8 bg-gradient-to-l from-[var(--background)] to-transparent md:w-32"
   >
   </div>
 
-  <div class="flex animate-scroll hover:animate-paused gap-12 md:gap-20 w-max">
+  <div class="carousel-track flex w-max gap-12 md:gap-20">
+    {/* Duplicate the list twice for seamless looping */}
     {
-      [...technologies, ...technologies, ...technologies].map((tech) => (
-        <div class="flex items-center gap-2 group transition-all duration-300">
-          <Image
-            src={tech.image}
-            alt={tech.name}
-            class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
+      [...technologies, ...technologies].map((tech, idx) => (
+        <div class="group flex items-center gap-2 transition-all duration-300">
+          <tech.image
+            class="h-7 w-auto object-contain opacity-60 transition-transform group-hover:scale-110"
             width="30"
             height="30"
           />
@@ -82,20 +80,19 @@ const technologies: Technology[] = [
 </div>
 
 <style is:global>
+  .carousel-track {
+    animation: scroll 60s linear infinite;
+  }
   @keyframes scroll {
-    from {
+    0% {
       transform: translateX(0);
     }
-    to {
+    100% {
       transform: translateX(-50%);
     }
   }
-  .animate-scroll {
-    animation: scroll 60s linear infinite;
-  }
-
   @media (min-width: 768px) {
-    .animate-scroll {
+    .carousel-track {
       animation-duration: 50s;
     }
   }

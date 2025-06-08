@@ -5,8 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 
-import '@fontsource-variable/montserrat';
-
+import "@fontsource-variable/montserrat";
 ---
 
 <!doctype html>
@@ -19,13 +18,19 @@ import '@fontsource-variable/montserrat';
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta property="og:title" content="Ramiro Moya" />
     <meta property="og:description" content="Software Developer" />
-    <meta property="og:image" content="https://portfolio-self-kappa-46.vercel.app/og.image.png" />
-    <meta property="og:url" content="https://portfolio-self-kappa-46.vercel.app" />
+    <meta
+      property="og:image"
+      content="https://portfolio-self-kappa-46.vercel.app/og.image.png"
+    />
+    <meta
+      property="og:url"
+      content="https://portfolio-self-kappa-46.vercel.app"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Ramiro Moya Portfolio" />
     <title>{title}</title>
   </head>
-  <body class="bg-[--background] md:px-48 lg:px-20 px-9">
+  <body class="bg-[--background] px-9 md:px-48 lg:px-20">
     <slot />
   </body>
 </html>
