@@ -29,5 +29,10 @@ export default defineConfig({
     port: 4321,
   },
   site: 'https://www.ramiromoya.com.ar',
-
+  experimental: {
+    responsiveImages: true,
+  },
+  image: {
+    experimentalLayout: 'constrained',
+  },
 });
