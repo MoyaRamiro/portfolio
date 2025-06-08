@@ -23,50 +23,49 @@ import next from "../assets/svg/nextjs.svg";
 
 interface Technology {
   name: string;
-  image: ((_props: astroHTML.JSX.SVGAttributes) => any) ;
+  image: (_props: astroHTML.JSX.SVGAttributes) => any;
 }
 const technologies: Technology[] = [
-
-  {name: "angular", image: angular},
-  {name: "astro", image: astro},
-  {name: "auth0", image: auth0},
-  {name: "java", image: java},
-  {name: "postgresql", image: postgresql},
-  {name: "remix", image: remix},
-  {name: "spring", image: spring},
-  {name: "react", image: react},
-  {name: "typescript", image: typeScript},
-  {name: "tailwindcss", image: tailwindcss},
-  {name: "nodejs", image: nodejs},
-  {name: "html5", image: HTML5},
-  {name: "css3", image: CSS3},
-  {name: "javascript", image: javaScript},
-  {name: "git", image: git},
-  {name: "mysql", image: mysql},
-  {name: "vercel", image: vercel},
-  {name: "vite", image: vite},
-  {name: "supabase", image: supa},
-  {name: "nestjs", image: nest},
-  {name: "next.js", image: next},
+  { name: "angular", image: angular },
+  { name: "astro", image: astro },
+  { name: "auth0", image: auth0 },
+  { name: "java", image: java },
+  { name: "postgresql", image: postgresql },
+  { name: "remix", image: remix },
+  { name: "spring", image: spring },
+  { name: "react", image: react },
+  { name: "typescript", image: typeScript },
+  { name: "tailwindcss", image: tailwindcss },
+  { name: "nodejs", image: nodejs },
+  { name: "html5", image: HTML5 },
+  { name: "css3", image: CSS3 },
+  { name: "javascript", image: javaScript },
+  { name: "git", image: git },
+  { name: "mysql", image: mysql },
+  { name: "vercel", image: vercel },
+  { name: "vite", image: vite },
+  { name: "supabase", image: supa },
+  { name: "nestjs", image: nest },
+  { name: "next.js", image: next },
 ];
 ---
 
 <div class="relative overflow-x-hidden py-8">
   <div
-    class="pointer-events-none absolute inset-y-0 left-0 w-8 md:w-32 bg-gradient-to-r from-[var(--background)] to-transparent z-20"
+    class="pointer-events-none absolute inset-y-0 left-0 z-20 w-8 bg-gradient-to-r from-[var(--background)] to-transparent md:w-32"
   >
   </div>
   <div
-    class="pointer-events-none absolute inset-y-0 right-0 w-8 md:w-32 bg-gradient-to-l from-[var(--background)] to-transparent z-20"
+    class="pointer-events-none absolute inset-y-0 right-0 z-20 w-8 bg-gradient-to-l from-[var(--background)] to-transparent md:w-32"
   >
   </div>
 
-  <div class="flex animate-scroll hover:animate-paused gap-12 md:gap-20 w-max">
+  <div class="animate-scroll hover:animate-paused flex w-max gap-12 md:gap-20">
     {
       [...technologies, ...technologies, ...technologies].map((tech) => (
-        <div class="flex items-center gap-2 group transition-all duration-300">
+        <div class="group flex items-center gap-2 transition-all duration-300">
           <tech.image
-            class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
+            class="h-7 w-auto object-contain opacity-60 transition-transform group-hover:scale-110"
             width="30"
             height="30"
           />

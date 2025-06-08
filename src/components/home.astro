@@ -7,23 +7,23 @@ import LinkedInIcon from "../assets/svg/linkedin.svg";
 import GmailIcon from "../assets/svg/gmail.svg";
 ---
 
-<section class="text-[var(--white)] mt-12 md:mt-0" id="home">
-  <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
-    <div class="text-left space-y-4">
-      <p class="text-md md:text-lg text-[var(--white-icon)] shiny-white">
+<section class="mt-12 text-[var(--white)] md:mt-0" id="home">
+  <div class="mx-auto max-w-5xl space-y-8 pb-14 md:py-36">
+    <div class="space-y-4 text-left">
+      <p class="text-md shiny-white text-[var(--white-icon)] md:text-lg">
         Hi, I'm
       </p>
       <div
-        class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4"
+        class="flex flex-col space-y-4 md:gap-4 lg:flex-row lg:items-center lg:space-x-8 lg:space-y-0"
       >
         <h1
-          class="text-[var(--white)] text-5xl md:text-6xl font-medium text-pretty leading-none"
+          class="text-pretty text-5xl font-medium leading-none text-[var(--white)] md:text-6xl"
         >
           Ramiro <br /> Moya
         </h1>
-        <p class="text-md md:text-2xl text-[var(--white-icon)]">
+        <p class="text-md text-[var(--white-icon)] md:text-2xl">
           Transforming ideas into interactive and seamless digital experiences
-          with cutting-edge <span class="text-[var(--sec)] shiny-sec"
+          with cutting-edge <span class="shiny-sec text-[var(--sec)]"
             >software</span
           > development.
         </p>
@@ -33,35 +33,35 @@ import GmailIcon from "../assets/svg/gmail.svg";
           target="_blank"
           href="https://github.com/MoyaRamiro"
           aria-label="GitHub"
-          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+          class="border-1 rounded-xl border border-[var(--white-icon-tr)] bg-[#1414149c] p-3 text-[var(--white-icon)] transition duration-300 ease-in-out hover:bg-[var(--white-icon-tr)] hover:text-white"
         >
-        <GitHubIcon height=32 width=32/>
+          <GitHubIcon height="32" width="32/" />
         </a>
         <a
           target="_blank"
           href="https://www.linkedin.com/in/ramiro-moya/"
           aria-label="LinkedIn"
-          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+          class="border-1 rounded-xl border border-[var(--white-icon-tr)] bg-[#1414149c] p-3 text-[var(--white-icon)] transition duration-300 ease-in-out hover:bg-[var(--white-icon-tr)] hover:text-white"
         >
-          <LinkedInIcon  height=32 width=32/>
+          <LinkedInIcon height="32" width="32/" />
         </a>
         <a
           target="_blank"
           href="https://mail.google.com/mail/?view=cm&fs=1&to=moya04.ramiro@gmail.com&su=Hola%20Ramiro!"
           aria-label="Email"
-          class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+          class="border-1 rounded-xl border border-[var(--white-icon-tr)] bg-[#1414149c] p-3 text-[var(--white-icon)] transition duration-300 ease-in-out hover:bg-[var(--white-icon-tr)] hover:text-white"
         >
-        <GmailIcon height=32 width=32/>
+          <GmailIcon height="32" width="32/" />
         </a>
       </div>
     </div>
 
     <LogoWall />
 
-    <div class="flex flex-col lg:flex-row items-center gap-8">
+    <div class="flex flex-col items-center gap-8 lg:flex-row">
       <SkillsList client:load />
       <div
-        class="flex justify-center md:w-full md:h-[292px] size-[290px] pt-3 md:pt-9 md:ml-16"
+        class="flex size-[290px] justify-center pt-3 md:ml-16 md:h-[292px] md:w-full md:pt-9"
       >
         <LetterGlitch
           client:load

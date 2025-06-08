@@ -4,50 +4,50 @@ import Projects from "../assets/svg/projects.svg";
 import Contact from "../assets/svg/contact.svg";
 ---
 
-<div class="flex justify-center w-full">
+<div class="flex w-full justify-center">
   <nav
-    class="fixed flex left-0 right-0 z-[100] bg-[#1414149c] border border-1 border-[var(--white-icon-tr)] backdrop-blur-xl transition-all md:top-0 md:bottom-auto bottom-0 md:w-[33rem] rounded-t-2xl md:rounded-full md:mt-6 md:justify-self-center"
+    class="border-1 fixed bottom-0 left-0 right-0 z-[100] flex rounded-t-2xl border border-[var(--white-icon-tr)] bg-[#1414149c] backdrop-blur-xl transition-all md:bottom-auto md:top-0 md:mt-6 md:w-[33rem] md:justify-self-center md:rounded-full"
   >
-    <div class="container mx-auto flex justify-center items-center p-3">
+    <div class="container mx-auto flex items-center justify-center p-3">
       <ul
-        class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-6"
+        class="flex w-full justify-between gap-6 md:justify-center md:gap-12 md:space-x-6"
       >
-      <li class="flex-1 md:flex-none">
-        <a
-          href=#home
-          class="flex flex-col items-center gap-1 text-[var(--white-icon)] transition-colors text-xs md:text-base"
-        >
-          <span class="md:hidden flex items-center justify-center w-6 h-6">
-            <Home />
-          </span>
-          <span class="hidden md:inline-block">Home</span>
-          <span class="md:hidden">Home</span>
-        </a>
-      </li>
-      <li class="flex-1 md:flex-none">
-        <a
-          href=#projects
-          class="flex flex-col items-center gap-1 text-[var(--white-icon)] transition-colors text-xs md:text-base"
-        >
-          <span class="md:hidden flex items-center justify-center w-6 h-6">
-            <Projects />
-          </span>
-          <span class="hidden md:inline-block">Projects</span>
-          <span class="md:hidden">Projects</span>
-        </a>
-      </li>
-      <li class="flex-1 md:flex-none">
-        <a
-          href=#contact
-          class="flex flex-col items-center gap-1 text-[var(--white-icon)] transition-colors text-xs md:text-base"
-        >
-          <span class="md:hidden flex items-center justify-center w-6 h-6">
-            <Contact />
-          </span>
-          <span class="hidden md:inline-block">Contact</span>
-          <span class="md:hidden">Contact</span>
-        </a>
-      </li>
+        <li class="flex-1 md:flex-none">
+          <a
+            href="#home"
+            class="flex flex-col items-center gap-1 text-xs text-[var(--white-icon)] transition-colors md:text-base"
+          >
+            <span class="flex h-6 w-6 items-center justify-center md:hidden">
+              <Home />
+            </span>
+            <span class="hidden md:inline-block">Home</span>
+            <span class="md:hidden">Home</span>
+          </a>
+        </li>
+        <li class="flex-1 md:flex-none">
+          <a
+            href="#projects"
+            class="flex flex-col items-center gap-1 text-xs text-[var(--white-icon)] transition-colors md:text-base"
+          >
+            <span class="flex h-6 w-6 items-center justify-center md:hidden">
+              <Projects />
+            </span>
+            <span class="hidden md:inline-block">Projects</span>
+            <span class="md:hidden">Projects</span>
+          </a>
+        </li>
+        <li class="flex-1 md:flex-none">
+          <a
+            href="#contact"
+            class="flex flex-col items-center gap-1 text-xs text-[var(--white-icon)] transition-colors md:text-base"
+          >
+            <span class="flex h-6 w-6 items-center justify-center md:hidden">
+              <Contact />
+            </span>
+            <span class="hidden md:inline-block">Contact</span>
+            <span class="md:hidden">Contact</span>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -88,7 +88,7 @@ import Contact from "../assets/svg/contact.svg";
 
     const observer = new IntersectionObserver(
       observerCallback,
-      observerOptions
+      observerOptions,
     );
     sections.forEach((section) => observer.observe(section));
   });
