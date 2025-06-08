@@ -60,9 +60,10 @@ const technologies: Technology[] = [
   >
   </div>
 
-  <div class="animate-scroll hover:animate-paused flex w-max gap-12 md:gap-20">
+  <div class="carousel-track flex w-max gap-12 md:gap-20">
+    {/* Duplicate the list twice for seamless looping */}
     {
-      [...technologies, ...technologies, ...technologies].map((tech) => (
+      [...technologies, ...technologies].map((tech, idx) => (
         <div class="group flex items-center gap-2 transition-all duration-300">
           <tech.image
             class="h-7 w-auto object-contain opacity-60 transition-transform group-hover:scale-110"
@@ -79,20 +80,19 @@ const technologies: Technology[] = [
 </div>
 
 <style is:global>
+  .carousel-track {
+    animation: scroll 60s linear infinite;
+  }
   @keyframes scroll {
-    from {
+    0% {
       transform: translateX(0);
     }
-    to {
+    100% {
       transform: translateX(-50%);
     }
   }
-  .animate-scroll {
-    animation: scroll 60s linear infinite;
-  }
-
   @media (min-width: 768px) {
-    .animate-scroll {
+    .carousel-track {
       animation-duration: 50s;
     }
   }
