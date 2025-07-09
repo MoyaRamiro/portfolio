@@ -13,6 +13,7 @@ interface Project {
   link: string;
   preview: string;
   status: string;
+  technologies: string[];
 }
 
 const projects: Project[] = [
@@ -22,6 +23,7 @@ const projects: Project[] = [
     link: "https://github.com/MoyaRamiro/la-velada-web-oficial",
     preview: "https://www.infolavelada.com/",
     status: "In Development",
+    technologies: ["Astro", "TypeScript", "TailwindCSS", "Node.js"],
   },
   {
     title: "HypeSounds",
@@ -29,6 +31,7 @@ const projects: Project[] = [
     link: "https://github.com/MoyaRamiro/HypeSounds",
     preview: "https://hype-sounds.vercel.app/",
     status: "Public Beta",
+    technologies: ["Remix", "TypeScript", "TailwindCSS", "Vite"],
   },
   {
     title: "MR. NBA",
@@ -36,22 +39,22 @@ const projects: Project[] = [
     link: "https://github.com/MoyaRamiro/Mr-NBA",
     preview: "https://mr-nba.vercel.app/",
     status: "Maintenance",
+    technologies: ["Angular", "TypeScript", "CSS"],
   },
 ];
 ---
 
-<section
-  id="projects"
-  class="border-t border-[#ffffff10] py-12 text-[var(--white)]"
->
-  <div class="mx-auto max-w-5xl">
-    <p class="shiny-sec mb-2 text-lg text-[var(--sec)]">My work</p>
+<section id="projects" class="border-t border-white/10 py-12 text-white">
+  <div class="mx-auto max-w-5xl px-4">
+    <p class="mb-2 text-lg text-blue-400 font-medium bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+      My work
+    </p>
     <h2 class="mb-8 text-4xl font-medium md:text-5xl">Projects</h2>
 
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-      {
-        projects.map((project) => (
-          <div class="group">
+      {projects.map((project, index) => (
+        <div class="group">
+          <div class="block">
             <a
               href={project.preview}
               aria-label={`See ${project.title}`}
@@ -67,19 +70,21 @@ const projects: Project[] = [
                   class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105 md:h-72"
                 />
               </div>
-              <div class="flex items-center px-3">
+            </a>
+
+            <div class="px-3">
+              <div class="flex items-start justify-between mb-3">
                 <div class="flex-grow">
-                  <h3 class="text-2xl font-semibold">{project.title}</h3>
-                  <span class="py-1 text-sm text-[var(--white-icon)]">
-                    {project.status}
-                  </span>
+                  <h3 class="text-2xl font-semibold mb-1">{project.title}</h3>
+                  <span class="text-sm text-gray-400">{project.status}</span>
                 </div>
-                <div class="ml-auto flex gap-2">
+                <div class="flex gap-2 ml-4">
                   <a
                     target="_blank"
                     href={project.link}
                     aria-label="GitHub"
-                    class="border-1 flex size-14 items-center justify-center rounded-xl border border-[var(--white-icon-tr)] bg-[#1414149c] p-3 text-[var(--white-icon)] transition duration-300 ease-in-out hover:bg-[var(--white-icon-tr)] hover:text-white"
+                    class="flex size-12 items-center justify-center rounded-xl border border-white/20 bg-gray-900/60 p-3 text-gray-400 transition duration-300 ease-in-out hover:bg-white/20 hover:text-white"
+                    rel="noreferrer"
                   >
                     <Code />
                   </a>
@@ -87,24 +92,38 @@ const projects: Project[] = [
                     target="_blank"
                     href={project.preview}
                     aria-label="Preview"
-                    class="border-1 flex size-14 items-center justify-center rounded-xl border border-[var(--white-icon-tr)] bg-[#1414149c] p-3 text-[var(--white-icon)] transition duration-300 ease-in-out hover:bg-[var(--white-icon-tr)] hover:text-white"
+
+                    class="flex size-12 items-center justify-center rounded-xl border border-white/20 bg-gray-900/60 p-3 text-gray-400 transition duration-300 ease-in-out hover:bg-white/20 hover:text-white"
+                    rel="noreferrer"
                   >
                     <Link />
                   </a>
                 </div>
               </div>
-            </a>
+
+              <div class="flex flex-wrap gap-2">
+                {project.technologies.map((technology, techIndex) => (
+                  <span
+                    class="rounded-full bg-white/10 px-3 py-1 text-xs text-gray-300 border border-white/20"
+                  >
+                    {technology}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-        ))
-      }
+        </div>
+      ))}
     </div>
+
     <a
       target="_blank"
       href="https://github.com/MoyaRamiro?tab=repositories"
       aria-label="GitHub"
-      class="mt-9 flex w-full items-center justify-center gap-2 rounded-full border border-[var(--white-icon-tr)] bg-[#1414149c] p-3 text-[var(--white-icon)] transition duration-300 ease-in-out hover:bg-[var(--white-icon-tr)] hover:text-white"
+      class="mt-9 flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-gray-900/60 p-4 text-gray-400 transition duration-300 ease-in-out hover:bg-white/20 hover:text-white"
+      rel="noreferrer"
     >
-      <span class="text-md md:text-lg">More projects on</span>
+      <span class="text-base md:text-lg">More projects on</span>
       <GitHub height="24" width="24" />
     </a>
   </div>
